@@ -5,20 +5,14 @@
   </body>
   <script>
     alert('Hello World!')
-    let url = 'https://kipa.co.il'
-    
-    fetch(url)
-    .then (function (res){
-      switch(res.status){
-        case 200: return res.text()
-        default : throw res
-      }
-    })
-    .then( function (data){
-      console.log(data)
-    })
-    .catch( function (res){
-      console.error(res.statusText)
-    })
+
+  let url  = 'https://kipa.co.il'
+  let mode = { method: 'GET', mode: 'no-cors',}
+    // const element = document.querySelector('#get-request .result');
+
+fetch( url, mode )
+.then( res => console.log(res))
+.catch(err => console.error(err))
+
   </script>
 </html>
