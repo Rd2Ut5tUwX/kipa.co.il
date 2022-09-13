@@ -4,6 +4,21 @@
   <body>
   </body>
   <script>
-    alert('Hello World!'); 
+    alert('Hello World!')
+    let url = 'https://kipa.co.il'
+    
+    fetch(url)
+    .then (function (res){
+      switch(res.status){
+        case 200: return res.text()
+        default : throw res
+      }
+    })
+    .then( function (data){
+      console.log(data)
+    })
+    .catch( function (res){
+      console.error(res.statusText)
+    })
   </script>
 </html>
